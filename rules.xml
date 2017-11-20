@@ -995,56 +995,67 @@
             <name>Barbarian</name>
             <abbreviation>Bbn</abbreviation>
             <hit_die>d12</hit_die>
+            <skill_points_base>4</skill_points_base>
         </class>
         <class>
             <name>Bard</name>
             <abbreviation>Brd</abbreviation>
             <hit_die>d6</hit_die>
+            <skill_points_base>6</skill_points_base>
         </class>
         <class>
             <name>Cleric</name>
             <abbreviation>Clr</abbreviation>
             <hit_die>d8</hit_die>
+            <skill_points_base>2</skill_points_base>
         </class>
         <class>
             <name>Druid</name>
             <abbreviation>Drd</abbreviation>
             <hit_die>d8</hit_die>
+            <skill_points_base>4</skill_points_base>
         </class>
         <class>
             <name>Fighter</name>
             <abbreviation>Ftr</abbreviation>
             <hit_die>d10</hit_die>
+            <skill_points_base>2</skill_points_base>
         </class>
         <class>
             <name>Monk</name>
             <abbreviation>Mnk</abbreviation>
             <hit_die>d8</hit_die>
+            <skill_points_base>4</skill_points_base>
         </class>
         <class>
             <name>Paladin</name>
             <abbreviation>Pal</abbreviation>
             <hit_die>d10</hit_die>
+            <skill_points_base>2</skill_points_base>
         </class>
         <class>
             <name>Ranger</name>
             <abbreviation>Rgr</abbreviation>
             <hit_die>d8</hit_die>
+            <skill_points_base>6</skill_points_base>
         </class>
         <class>
             <name>Rogue</name>
             <abbreviation>Rog</abbreviation>
             <hit_die>d6</hit_die>
+            <skill_points_base>8</skill_points_base>
         </class>
         <class>
             <name>Sorcerer</name>
             <abbreviation>Sor</abbreviation>
             <hit_die>d4</hit_die>
+            <skill_points_base>2</skill_points_base>
         </class>
         <class>
             <name>Wizard</name>
             <abbreviation>Wiz</abbreviation>
             <hit_die>d4</hit_die>
+            <skill_points_base>2</skill_points_base>
         </class>
     </classes>
 </rules>

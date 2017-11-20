@@ -31,9 +31,6 @@ class Feat
                               description: description
                           })
     end
-    feats.each{|feat| puts feat}
     feats
   end
-
-  Feat.generate
 end

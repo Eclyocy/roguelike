@@ -23,7 +23,7 @@ class Race
 
   def self.generate
     races = []
-    REXML::Document.new(File.new('./rules.xml')).elements.each('races/race') do |race_xml|
+    REXML::Document.new(File.new('./rules.xml')).elements.each('rules/races/race') do |race_xml|
       # Ability adjustments
       ability_adjustments = {}
       if race_xml.elements['ability_adjustments']
@@ -43,8 +43,6 @@ class Race
                            feats: feats,
                            favored_klass: favored_klass})
     end
-    races.each{|race| puts race}
+    races
   end
-
-  Race.generate
 end

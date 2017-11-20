@@ -1,6 +1,6 @@
 class Character
   attr_reader :name,
-              :race,
+              :race, # Race object
               :experience,
               :klasses,
               :alignment,
@@ -16,7 +16,7 @@ class Character
 
   def initialize( args = {} )
     @name = args[:name] || 'TestSubject'
-    @race = args[:race] || 'human'
+    @race = args[:race]
     @experience =
         if args[:experience]
           args[:experience]
@@ -25,7 +25,7 @@ class Character
         else
           0
         end
-    @klasses = args[:klasses] || ['Fighter']
+    @klasses = args[:klasses]
     @alignment = args[:alignment] || 'True Neutral'
     @deity = args[:deity] || 'None'
     @abilities = args[:abilities] || {str: 8, dex: 8, con: 8, int: 8, wis: 8, cha: 8}
@@ -39,7 +39,7 @@ class Character
         "\tName: #{@name}\n" +
         "\tRace: #{@race.name}\n" +
         "\tXP: #{@experience}\n" +
-        "\tClasses: #{@klasses}\n" +
+        "\tClasses: #{@klasses.map { |klass| klass.name } }\n" +
         "\tAlignment: #{@alignment}\n" +
         "\tDeity: #{@deity}\n" +
         "\tAbilities: #{@abilities}\n" +

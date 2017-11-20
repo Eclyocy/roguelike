@@ -10,4 +10,32 @@ class Klass
               :skill_points, # N+Int points gained at each level for skills upgrading; x4 at first level; N in {2,4,6,8}
               :class_skills, # list of skills for which level upgrade costs 1 point; others skills will cost 2 points
               :spells # various; could be nil (in case Character is non-mage)
+
+  def initialize( args = {} )
+    @name = args[:name]
+    @description = args[:description]
+    @alignment_restrictions = args[:alignment_restrictions]
+    @hit_dice = args[:hit_dice]
+    @base_attack_bonus = args[:base_attack_bonus]
+    @high_saves = args[:high_saves]
+    @feats = args[:feats]
+    @skill_points = args[:skill_points]
+    @class_skills = args[:class_skills]
+    @spells = args[:spells]
+  end
+
+  def to_s
+    "Class:\n" +
+        "\tName: #{@name}"
+  end
+
+  def self.generate
+    klasses = []
+    REXML::Document.new(File.new('./rules.xml')).elements.each('rules/classes/class') do |klass_xml|
+      klasses.push Klass.new({
+                                 name: klass_xml.elements['name'].text
+                             })
+    end
+    klasses
+  end
 end

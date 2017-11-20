@@ -27,7 +27,6 @@
             <feat>Quick to Master</feat>
             <feat>Skilled</feat>
         </racial_feats>
-        <favored_class>Any</favored_class>
     </race>
     <!--Dwarves-->
     <race>
@@ -198,7 +197,6 @@
             <feat>Amiable</feat>
             <feat>Elven Blood</feat>
         </racial_feats>
-        <favored_class>Any</favored_class>
     </race>
     <!--Half-Orcs-->
     <race>

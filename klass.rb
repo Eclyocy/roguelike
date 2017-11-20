@@ -3,7 +3,7 @@ class Klass
               :description,
               :alignment_restrictions, # one of the following: nil; any (non)lawful; any neutral; lawful good;
                                        # any evil or chaotic
-              :hit_dice, # one of the following: d4, d6, d8, d10, d12
+              :hit_die, # one of the following: d4, d6, d8, d10, d12
               :base_attack_bonus, # one of the following: Low, Medium, High
               :high_saves, # from 1 to 3 of the following: Fortitude, Reflex, Will ("High Saves: All" for all 3)
               :feats, # various
@@ -15,7 +15,7 @@ class Klass
     @name = args[:name]
     @description = args[:description]
     @alignment_restrictions = args[:alignment_restrictions]
-    @hit_dice = args[:hit_dice]
+    @hit_die = args[:hit_die]
     @base_attack_bonus = args[:base_attack_bonus]
     @high_saves = args[:high_saves]
     @feats = args[:feats]
@@ -26,14 +26,16 @@ class Klass
 
   def to_s
     "Class:\n" +
-        "\tName: #{@name}"
+        "\tName: #{@name}\n" +
+        "\tHD: #{@hit_die}"
   end
 
   def self.generate
     klasses = []
     REXML::Document.new(File.new('./rules.xml')).elements.each('rules/classes/class') do |klass_xml|
       klasses.push Klass.new({
-                                 name: klass_xml.elements['name'].text
+                                 name: klass_xml.elements['name'].text,
+                                 hit_die: klass_xml.elements['hit_die'].text
                              })
     end
     klasses

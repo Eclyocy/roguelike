@@ -29,7 +29,7 @@ class Game
                            name: 'Frodo',
                            race: halfling,
                            klasses: [rogue],
-                           alignment: Alignment.new(lawfulness: 'chaotic', goodness: 'neutral')
+                           alignment: Alignment.new(lawfulness: 0, goodness: 100)
                        })
   puts char
 end
